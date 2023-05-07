@@ -10,6 +10,12 @@ class RestaurantsController < ApplicationController
         restaurant = find_restaurant
         render json: restaurant.to_json(include: :pizzas)
     end
+
+    def destroy
+        restaurant = find_restaurant
+        restaurant.destroy
+        render json: {}
+    end
     
 
     private
